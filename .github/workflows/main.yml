@@ -10,11 +10,16 @@ jobs:
       - name: CONFIG
         run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
       - uses: actions/checkout@v2
+        with: 
+          repository: sanchilon/VerifyProj
+          ref: refs/heads/main
+          token: $${{ github.token}}
+      - uses: actions/checkout@v2
         with:
           repository: ongov/OntarioVerify
           path: ./a
           ref: refs/heads/main
-          token: ${{ secrets.PAT }}
-          submodules: true
+          token: ${{ github.token }}
+      
    
    
