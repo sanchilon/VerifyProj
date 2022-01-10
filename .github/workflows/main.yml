@@ -9,8 +9,9 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
+          UID: ${{ secrets.USERNAME }}
         run: |
-          echo ${{ env.PAT }}
+          echo ${{ env.UID }}
           mkdir OntarioVerify && cd OntarioVerify
           git init
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
