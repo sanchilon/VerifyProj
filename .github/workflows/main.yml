@@ -12,11 +12,10 @@ jobs:
           PAT: ${{ secrets.PAT }}
         run: |
           echo "$PAT" > "$HOME/.secret"
-          echo "secret" >> "$HOME/.secret"
-          cat "$HOME/.secret"
+      - name: ECHO
+        run:  echo ${{ steps.init.env.PAT }}
       - name: SET_CONFIG
         run: |
-          echo ${{ steps.init.env.PAT }}
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
           git config --global credential.https://github.com.username "sanchilon" 
           git config --global credential.helper '!f() { test \"$1\" = get && echo \"password=$(cat $HOME/.secret)\"; }; f'
