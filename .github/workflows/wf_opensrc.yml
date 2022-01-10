@@ -20,6 +20,8 @@ jobs:
           repository: ongov/OntarioVerify
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
+      - name: TRANSFORM
+        uses: sanchilon/gitact@v1
       - name: LIST
         run: ls -al
   
