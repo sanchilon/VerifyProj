@@ -10,12 +10,7 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
-        run: |
-          echo $PAT > "$HOME/.secret"
-      - name: ECHO
-        env: 
-          TY: ${{ secrets.PAT }}
-        run:  echo $TY
+        run: echo $PAT > "$HOME/.secret"
       - name: SET_CONFIG
         run: |
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
