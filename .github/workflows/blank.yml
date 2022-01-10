@@ -18,7 +18,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: CONFIG ENV
         run: |
-          echo "https://$GITHUB_ACTOR:$PAT@github.com" "$HOME/.git-credentials"
+          echo "https://$GITHUB_ACTOR:$PAT@github.com" > $HOME/.git-credentials
           git config --global credential.helper 'store --file "$HOME/.git-credentials" '
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca" 
       - name: ECHO
