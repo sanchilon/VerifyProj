@@ -5,10 +5,5 @@ jobs:
   opensrc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          repository: sanchilon/VerifyProj
-          ref: refs/heads/main
-          token: ${{ secrets.PAT }}
       - name: LIST
         run: ls -al 
