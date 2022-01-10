@@ -22,6 +22,6 @@ jobs:
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: TRANSFORM
-        uses: sanchilon/gitact@v1
+        uses: sanchilon/gitact@v1.1.1
    
   
