@@ -9,7 +9,7 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
-          UID: ${{ environment.USERNAME }}
+          UID: ${{ env.USERNAME }}
         run: |
           echo ${{ env.UID }}
           mkdir OntarioVerify && cd OntarioVerify
