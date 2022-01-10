@@ -1,17 +1,11 @@
 name: CreateOpenSrc
-
-# Controls when the workflow will run
-on:
- 
+on: 
   workflow_dispatch:
-
 jobs:
   opensrc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     environment: WF_Env
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
@@ -19,8 +13,5 @@ jobs:
           repository: ongov/OntarioVerify
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      - name: LIST
-        run: ls -al 
-      #- name: RUN OPEN SRC
-      #  uses: sanchilon/gitact1@v1 
+   
    
