@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: ongov/OntarioVerify
-          path: ./OntarioVerify
+          path: ./OpenVerify
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: TRANSFORM
