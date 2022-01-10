@@ -13,7 +13,7 @@ jobs:
         run: |
           echo "$PAT" > "$HOME/.secret"
       - name: ECHO
-        run:  echo ${{ env.PAT }}
+        run:  echo "$PAT"
       - name: SET_CONFIG
         run: |
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
