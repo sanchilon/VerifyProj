@@ -4,12 +4,13 @@ on:
 jobs:
   opensrc:
     runs-on: ubuntu-latest
+    environment: WF_Env
     steps:
       - id: init
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
-          UID: ${{ env.USERNAME }}
+          UID: ${{ environment.USERNAME }}
         run: |
           echo ${{ env.UID }}
           mkdir OntarioVerify && cd OntarioVerify
