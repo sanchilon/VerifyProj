@@ -7,3 +7,11 @@ jobs:
     steps:
       - name: LIST
         run: ls -al 
+      - name: CHECKOUT_LOCAL
+        uses: actions/checkout@v2
+        with:
+          repository: sanchilon/VerifyOpenSource
+          path: ./a
+          ref: refs/heads/main
+          token: ${{ secrets.PAT }}
+      
