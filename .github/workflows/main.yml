@@ -4,11 +4,14 @@ on:
 jobs:
   opensrc:
     runs-on: ubuntu-latest
+    environment: WF_Env
     steps:
+      - name: CONFIG
+        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
       - uses: actions/checkout@v2
         with:
-          repository: sanchilon/VerifyProj
-          path: ./VerifyProj
+          repository: sanchilon/VerifyOpenSource
+          path: ./VerifyOpenSource
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
       - name: Checkout OntarioVerify
@@ -20,4 +23,3 @@ jobs:
           token: ${{ secrets.PAT }}
       - name: LIST
         run: ls -al ./VerifyOpenSource && ls -al ./OpenVerify
-     
