@@ -10,7 +10,6 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
-      - name: SET_SECRET
         run: |
           echo "$PAT" > "$HOME/.secret"
           echo "$HOME/.secret"
