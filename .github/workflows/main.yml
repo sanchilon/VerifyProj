@@ -1,25 +1,23 @@
-name: CreateOpenSrc
-on: 
+name: OpenSrc
+on:
   workflow_dispatch:
 jobs:
   opensrc:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: CONFIG
-        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-      - uses: actions/checkout@v2
-        with: 
-          repository: sanchilon/VerifyProj
-          ref: refs/heads/main
-          token: ${{ secrets.PAT}}
       - uses: actions/checkout@v2
         with:
-          repository: ongov/OntarioVerify
-          path: ./a
+          repository: sanchilon/VerifyProj
+          path: ./VerifyProj
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      
-   
-   
+      - name: Checkout OntarioVerify
+        uses: actions/checkout@v2
+        with:
+          repository: ongov/OntarioVerify
+          path: ./OpenVerify
+          ref: refs/heads/main
+          token: ${{ secrets.PAT }}
+      - name: LIST
+        run: ls -al ./VerifyOpenSource && ls -al ./OpenVerify
+     
