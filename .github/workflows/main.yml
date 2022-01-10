@@ -10,7 +10,7 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
-        run: echo "https://sanchilon:${{secrets.PAT}}@github.com" > $HOME/.git-credentials
+        run: echo "https://sanchilon:$PAT@github.com" > $HOME/.git-credentials
       - name: ECHO
         run: cat $HOME/.git-credentials
       - name: SET_CONFIG
