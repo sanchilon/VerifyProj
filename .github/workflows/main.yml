@@ -5,8 +5,6 @@ jobs:
   opensrc:
     runs-on: ubuntu-latest
     steps:
-      - name: CONFIG
-        run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
       - uses: actions/checkout@v2
         with:
           repository: sanchilon/VerifyProj
