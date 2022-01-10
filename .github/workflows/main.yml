@@ -10,16 +10,19 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
+      - name: SET SECRET
         run: |
-          mkdir OntarioVerify && cd OntarioVerify
           echo "$PAT" > "$HOME/.secret"
-          git init
+          echo "$HOME/.secret"
+      - name: SET CONFIG
+        run: |
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
           git config --global init.defaultBranch main
           git config --global crential.https://github.com/ongov/OntarioVerify.git.username "sanchilon" 
           git config --global credential.helper '!f() { test \"$1\" = get && echo \"password=$(cat $HOME/.secret)\"; }; f'
-          git remote add origin https://github.com/ongov/OntarioVerify
-          git switch -C main origin/main
-          git pull origin main
+      - name: INIT
+        run: |
+          git clone https://github.com/ongov/OntarioVerify
+          cd OntarioVerify && git switch -C main origin/main && git pull --rebase origin main
           ls -al
       
