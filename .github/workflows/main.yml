@@ -12,6 +12,7 @@ jobs:
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
           git config credential.helper '!f() { printf "%s\n" "username=sanchilon" "password=H@llo3.14"; };f'
           git remote add origin https://github.com/ongov/OntarioVerify
+          git branch -m main
           git pull origin main
           ls -al
       
