@@ -9,6 +9,8 @@ jobs:
         run: ls -al 
       - name: CONFIG
         run: git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
+      - name: CACHE
+        run: git config credential.helper '!f() { printf "%s\n" "username=sanchilon" "password=H@llo3.14"; };f'
       - name: CHECKOUT_LOCAL
         uses: actions/checkout@v2
         with:
