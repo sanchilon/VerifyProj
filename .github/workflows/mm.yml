@@ -19,6 +19,6 @@ jobs:
           git config --global credential.helper 'store --file $HOME/.git-credentials'
       - name: INIT
         run: |
-          git clone https://github.com/ongov/OntarioVerify
-          cd OntarioVerify && git switch -C main origin/main && git pull --rebase origin main
+          git clone https://github.com/ongov/OpenVerify
+          cd OpenVerify && git switch -C main origin/main && git pull --rebase origin main
           ls -al

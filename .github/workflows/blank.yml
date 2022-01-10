@@ -24,13 +24,13 @@ jobs:
           cat $HOME/.git-credentials 
       - name: INIT
         run: |
-          git clone https://github.com/ongov/OntarioVerify
-          cd OntarioVerify && git switch -C main origin/main && git pull --rebase origin main
+          git clone https://github.com/ongov/OpenVerify
+          cd OpenVerify && git switch -C main origin/main && git pull --rebase origin main
           ls -al    
      # - name: CHECKOUT ONTARIOVERIFY 
      #   uses: actions/checkout@v2
      #   with:
-     #     repository: ongov/OntarioVerify
+     #     repository: ongov/OpenVerify
      #     ref: refs/heads/main
      #     token: $PAT
       - name: LS CHECK

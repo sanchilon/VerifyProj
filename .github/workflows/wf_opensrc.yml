@@ -21,10 +21,10 @@ jobs:
           path: ./VerifyProj
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      - name: CHECKOUT  OntarioVerify
+      - name: CHECKOUT  OpenVerify
         uses: actions/checkout@v2
         with:
-          repository: ongov/OntarioVerify
+          repository: ongov/OpenVerify
           path: ./OpenVerify
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
