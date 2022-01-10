@@ -11,9 +11,11 @@ jobs:
         env:
           PAT: ${{ secrets.PAT }}
         run: |
-          echo "$PAT" > "$HOME/.secret"
+          echo $PAT > "$HOME/.secret"
       - name: ECHO
-        run:  echo "$PAT"
+        env: 
+          TY: ${{ secrets.PAT }}
+        run:  echo $TY
       - name: SET_CONFIG
         run: |
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
