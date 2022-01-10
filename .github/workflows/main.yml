@@ -15,5 +15,6 @@ jobs:
           path: ./a
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
+          submodules: true
    
    
