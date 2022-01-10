@@ -10,11 +10,11 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
-      - name: SET SECRET
+      - name: SET_SECRET
         run: |
           echo "$PAT" > "$HOME/.secret"
           echo "$HOME/.secret"
-      - name: SET CONFIG
+      - name: SET_CONFIG
         run: |
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
           git config --global credential.https://github.com/ongov/OntarioVerify.git.username "sanchilon" 
