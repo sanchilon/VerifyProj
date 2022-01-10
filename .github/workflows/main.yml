@@ -10,7 +10,6 @@ jobs:
           mkdir OntarioVerify && cd OntarioVerify
           git init
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-          git config credential.helper '!f() { printf "%s\n" "username=sanchilon" "password=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"; };f'
           git remote add origin https://github.com/sanchilon/VerifyOpenSource
           git branch -m main
           git pull origin main
