@@ -10,12 +10,13 @@ jobs:
         name: INIT
         env:
           PAT: ${{ secrets.PAT }}
-        run: echo $PAT > "$HOME/.secret"
+        run: echo "https://sanchilon:${{secrets.PAT}}@github.com" > $HOME/.git-credentials
+      - name: ECHO
+        run: cat $HOME/.git-credentials
       - name: SET_CONFIG
         run: |
           git config --global user.name "sanchilon" && git config --global user.email "sandeep.chiluveru@ontario.ca"
-          git config --global credential.https://github.com.username "sanchilon" 
-          git config --global credential.helper '!f() { test \"$1\" = get && echo \"password=$(cat $HOME/.secret)\"; }; f'
+          git config --global credential.helper 'store --file $HOME/.git-credentials'
       - name: INIT
         run: |
           git clone https://github.com/ongov/OntarioVerify
