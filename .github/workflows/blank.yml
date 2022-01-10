@@ -25,7 +25,7 @@ jobs:
         run: |
           echo $GITHUB_ACTOR
           echo $PAT
-          run: cat $HOME/.git-credentials  
+          cat $HOME/.git-credentials  
       - name: CHECKOUT ONTARIOVERIFY 
         uses: actions/checkout@v2
         with:
