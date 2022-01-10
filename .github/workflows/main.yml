@@ -13,13 +13,13 @@ jobs:
         with: 
           repository: sanchilon/VerifyProj
           ref: refs/heads/main
-          token: $${{ github.token}}
+          token: ${{ secrets.PAT}}
       - uses: actions/checkout@v2
         with:
           repository: ongov/OntarioVerify
           path: ./a
           ref: refs/heads/main
-          token: ${{ github.token }}
+          token: ${{ secrets.PAT }}
       
    
    
