@@ -35,5 +35,6 @@ jobs:
           email: "sandeep.chiluveru@ontario.ca"
           rel_branch: "main"
           repository: "ongov/OntarioVerify"
+          token: ${{ secrets.PAT }}
    
   
