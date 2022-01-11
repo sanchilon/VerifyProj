@@ -21,14 +21,19 @@ jobs:
           path: ./VerifyProj
           ref: refs/heads/main
           token: ${{ secrets.PAT }}
-      - name: CHECKOUT  OntarioVerify
-        uses: actions/checkout@v2
-        with:
-          repository: ongov/OntarioVerify
-          path: ./OpenVerify
-          ref: refs/heads/main
-          token: ${{ secrets.PAT }}
+      #- name: CHECKOUT  OntarioVerify
+      #  uses: actions/checkout@v2
+      #  with:
+      #    repository: ongov/OntarioVerify
+      #    path: ./OpenVerify
+      #    ref: refs/heads/main
+      #    token: ${{ secrets.PAT }}
       - name: TRANSFORM
         uses: sanchilon/gitact@v1.1.5
+        with:
+          uid: "sanchilon"
+          email: "sandeep.chiluveru@ontario.ca"
+          rel_branch: "main"
+          repository: "ongov/OntarioVerify"
    
   
