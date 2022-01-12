@@ -34,7 +34,8 @@ jobs:
           uid: "sanchilon"
           email: "sandeep.chiluveru@ontario.ca"
           rel_branch: "main"
-          repository: "ongov/OntarioVerify"
+          prod_repository: "ongov/OntarioVerify"
+          opnsrc_static_repository: "sanchilon/VerifyProj"
           token: ${{ secrets.PAT }}
    
   
