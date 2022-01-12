@@ -32,10 +32,11 @@ jobs:
         uses: sanchilon/gitact@v1.1.5
         with:
           uid: "sanchilon"
-          email: "sandeep.chiluveru@ontario.ca"
-          rel_branch: "main"
+          email: "sandeep.chiluveru@ontario.ca"         
           prod_repository: "ongov/OntarioVerify"
+          prod_branch: "main"
           opnsrc_static_repository: "sanchilon/VerifyProj"
+          opnsrc_branch: "main"
           token: ${{ secrets.PAT }}
    
   
